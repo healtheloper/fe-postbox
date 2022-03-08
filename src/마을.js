@@ -11,7 +11,7 @@ export class 마을 {
   template() {
     return `<div class="town" style="width:${this.가로길이}px; height:${
       this.세로길이
-    }px; top:${this.상대좌표.x}px; left:${this.상대좌표.y}px">${
+    }px; top:${this.상대좌표.y}px; left:${this.상대좌표.x}px">${
       this.우체통 ? this.우체통.template() : ""
     }${
       this.자식마을.length > 0
