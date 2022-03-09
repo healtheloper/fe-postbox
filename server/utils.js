@@ -7,7 +7,8 @@ const 마을개수랜덤생성 = () => {
 
 const 크기랜덤생성 = (우체통인가, 최대크기, 나눌수 = 1) => {
   const 최소크기 = 우체통인가 ? 1 : 최대크기 / 나눌수 / 2;
-  return Math.floor(Math.random() * (최대크기 / 나눌수)) + 최소크기;
+  const 생성한크기 = Math.floor(Math.random() * (최대크기 / 나눌수)) + 최소크기;
+  return 생성한크기;
 };
 
 const 우체통존재여부랜덤생성 = () => {
