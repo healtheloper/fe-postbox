@@ -26,9 +26,9 @@ export class 마을 {
   }
   template() {
     return `
-      <div class="town${this.우체통 ? " hasBox" : ""}" style="${
-      this.마을스타일
-    }">
+      <div data-name="${this.마을이름}" class="town${
+      this.우체통 ? " hasBox" : ""
+    }" style="${this.마을스타일}">
         <span class="townName">${this.마을이름}</span>
         ${this.우체통 ? this.우체통.template() : ""}
         ${
