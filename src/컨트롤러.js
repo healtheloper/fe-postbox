@@ -2,7 +2,7 @@ import { 클래스로요소찾기, 딜레이 } from "./utils.js";
 const 우체통마을들 = [];
 
 const 우체통크기확인 = (마을) =>
-  [...마을.children].find((마을요소) => (마을요소.classList.contains = "box"))
+  [...마을.children].find((마을요소) => 마을요소.classList.contains("box"))
     .dataset.size;
 
 const 우체통마을이름들확인 = (우체통마을들) =>
@@ -12,15 +12,18 @@ const 마을정보출력 = () => {
   const 우체통마을이름들 = 우체통마을이름들확인(우체통마을들);
 
   클래스로요소찾기("townCount").innerHTML = `
-  ${우체통마을이름들.join(", ")} 총 ${우체통마을이름들.length}개의 마을입니다.
+    ${우체통마을이름들.join(", ")} 총 ${우체통마을이름들.length}개의 마을입니다.
   `;
 
-  우체통마을들.sort((a, b) => 우체통크기확인(b) - 우체통크기확인(a));
+  const 우체통크기순 = [
+    ...우체통마을들.sort((a, b) => 우체통크기확인(b) - 우체통크기확인(a)),
+  ];
 
-  // 클래스로요소찾기("boxSize")
-  // .innerHTML = `우체통은 크기는 ${우체통마을이름들확인(
-  //   우체통마을들
-  // )} 순입니다.`;
+  클래스로요소찾기(
+    "boxSize"
+  ).innerHTML = `우체통은 크기는 ${우체통마을이름들확인(
+    우체통마을들
+  )} 순입니다.`;
 };
 
 const 우체통마을색상변경 = (마을) => {
@@ -41,7 +44,6 @@ const 우체통마을찾기 = (시작점) => {
 
 const 컨트롤러 = () => {
   const 버튼 = 클래스로요소찾기("checkBtn");
-
   버튼.addEventListener("click", async () => {
     우체통마을찾기(클래스로요소찾기("townMap"));
     마을정보출력();
