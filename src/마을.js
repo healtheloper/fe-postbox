@@ -7,7 +7,9 @@ export class 마을 {
     상대좌표: { x, y },
     자식마을,
     우체통존재여부,
+    마을이름,
   }) {
+    this.마을이름 = 마을이름;
     this.가로길이 = 가로길이;
     this.세로길이 = 세로길이;
     this.상대좌표 = { x, y };
@@ -24,7 +26,10 @@ export class 마을 {
   }
   template() {
     return `
-      <div class="town" style="${this.마을스타일}">
+      <div class="town${this.우체통 ? " hasBox" : ""}" style="${
+      this.마을스타일
+    }">
+        <span class="townName">${this.마을이름}</span>
         ${this.우체통 ? this.우체통.template() : ""}
         ${
           this.자식마을.length

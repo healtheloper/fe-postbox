@@ -19,4 +19,12 @@ const 클래스로요소찾기 = (클래스) => {
   return dfs(document.body, 클래스);
 };
 
-export { 마을정보가져오기, 클래스로요소찾기 };
+const 딜레이 = (밀리초) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 밀리초);
+  });
+};
+
+export { 마을정보가져오기, 클래스로요소찾기, 딜레이, dfs };

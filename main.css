@@ -43,3 +43,13 @@
 .box {
   display: inline-block;
 }
+
+.townName {
+  position: absolute;
+  left: calc(50% - 4px);
+  top: -13px;
+}
+
+.checkBtn {
+  cursor: pointer;
+}
