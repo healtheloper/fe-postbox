@@ -4,7 +4,7 @@ const 마을정보가져오기 = async () => {
 };
 
 Array.prototype.파크옐로우정렬 = function (callback) {
-  let arr = this;
+  const arr = this;
   for (let i = 0; i < arr.length - 1; i++) {
     for (let k = 0; k < arr.length - i - 1; k++) {
       const a = arr[k];
