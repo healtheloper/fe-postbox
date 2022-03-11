@@ -4,16 +4,21 @@ const 마을정보가져오기 = async () => {
 };
 
 Array.prototype.파크옐로우정렬 = function (callback) {
-  let arr = [...this];
-  // for (let i = 0; i < arr.length - 1; i++) {
-  //   const a = arr[i];
-  //   const b = arr[i + 1];
-  //   const diff = callback(a, b);
-  //   if (diff > 0) {
-  //     arr = [...arr.slice(0, a), b, a, ...arr.slice(b + 1, arr.length + 1)];
-  //   }
-  // }
+  let arr = this;
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let k = 0; k < arr.length - i - 1; k++) {
+      const a = arr[k];
+      const b = arr[k + 1];
+      const diff = callback(a, b);
+      if (diff > 0) {
+        arr[k] = b;
+        arr[k + 1] = a;
+      }
+    }
+  }
+  return arr;
 };
+
 const dfs = (시작점, 클래스) => {
   const 자식노드들 = [...시작점.children];
   const 찾은노드 = 자식노드들.find((자식노드) =>

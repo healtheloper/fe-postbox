@@ -15,7 +15,7 @@ const 마을정보출력 = () => {
     ${우체통마을이름들.join(", ")} 총 ${우체통마을이름들.length}개의 마을입니다.
   `;
 
-  우체통마을들.sort((a, b) => 우체통크기확인(b) - 우체통크기확인(a));
+  우체통마을들.파크옐로우정렬((a, b) => 우체통크기확인(b) - 우체통크기확인(a));
 
   클래스로요소찾기(
     "boxSize"
@@ -41,10 +41,6 @@ const 우체통마을찾기 = (시작점) => {
 };
 
 const 컨트롤러 = () => {
-  //   const arr = [1, 2, 5, 4, 3];
-  //   console.log(arr);
-  //   arr.파크옐로우정렬((a, b) => a - b);
-  //   console.log(arr);
   const 버튼 = 클래스로요소찾기("checkBtn");
   버튼.addEventListener("click", async () => {
     우체통마을찾기(클래스로요소찾기("townMap"));
